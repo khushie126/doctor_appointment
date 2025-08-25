@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2025-08-25 12:10:32
+  end_time: 2025-08-25 12:10:32
+  booked_date: 2025-08-25 12:10:32
+  available_date: 2025-08-25 12:10:32
+  status: 1
+  description: MyText
+  booking_number: 1
+  patient: one
+  doctor: one
+  medical_unit: one
+  location: one
+
+two:
+  start_time: 2025-08-25 12:10:32
+  end_time: 2025-08-25 12:10:32
+  booked_date: 2025-08-25 12:10:32
+  available_date: 2025-08-25 12:10:32
+  status: 1
+  description: MyText
+  booking_number: 1
+  patient: two
+  doctor: two
+  medical_unit: two
+  location: two
