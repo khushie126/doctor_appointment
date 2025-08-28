@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_25_102948) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_28_075127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -27,7 +27,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_25_102948) do
     t.bigint "location_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "doctor_time_slot_id"
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
+    t.index ["doctor_time_slot_id"], name: "index_appointments_on_doctor_time_slot_id"
     t.index ["location_id"], name: "index_appointments_on_location_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
@@ -106,10 +108,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_25_102948) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "jti"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "doctor_time_slots"
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "locations"
   add_foreign_key "appointments", "patients"
