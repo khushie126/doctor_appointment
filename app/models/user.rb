@@ -11,7 +11,7 @@ def generate_jwt
 end
 
   devise :database_authenticatable, :registerable, :recoverable, :validatable, :jwt_authenticatable, jwt_revocation_strategy: self
-   enum :role, [:doctor, :patient, :medcal_unit]
+   enum :role, [:doctor, :patient, :medical_unit]
 
    def jwt_payload
      super

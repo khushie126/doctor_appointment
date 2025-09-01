@@ -1,0 +1,1 @@
+json.extract! location, :id, :address, :city, :state, :country, :zip_code, :medical_unit_id 

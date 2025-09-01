@@ -1,7 +1,5 @@
 class Api::V1::AppointmentsController < ApplicationController
       before_action :set_appointment, only: [ :show, :update, :destroy, :change_status ]
-
-
       def index
         @appointments = Appointment.all
         render json: @appointments
@@ -54,6 +52,6 @@ class Api::V1::AppointmentsController < ApplicationController
       end
 
       def appointment_params
-        params.permit(:start_time, :end_time, :booked_date, :available_date, :status, :description, :patient_id, :doctor_id, :location_id)
+        params.permit(:start_time,:status, :description, :patient_id, :doctor_id, :location_id)
       end
 end

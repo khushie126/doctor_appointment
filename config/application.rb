@@ -24,6 +24,6 @@ module DoctorAppointment
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.middleware.use ActionDispatch::Flash
-
+    config.api_only = true
   end
 end
