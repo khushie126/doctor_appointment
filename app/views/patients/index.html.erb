@@ -1,0 +1,24 @@
+<h1>Patients</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Phone Number</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.phone_number %></td>
+        <td><%= image_tag patient.image, size: "100x100" if patient.image.present? %></td>
+        <td><%= link_to "Show", patient %></td>
+        <td><%= link_to "Edit", edit_patient_path(patient)%></td>
+        <td><%= link_to 'Delete', patient, data: { turbo_method: :delete, confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

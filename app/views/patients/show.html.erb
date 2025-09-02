@@ -1,0 +1,10 @@
+<h1>Patient Details</h1>
+
+<p><strong>Phone Number:</strong> <%= @patient.phone_number %></p>
+
+<p><strong>Image:</strong><br>
+  <%= image_tag @patient.image, size: "200x200" if @patient.image.present? %>
+</p>
+
+<%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary" %>
+<%= link_to "Back", patients_path, class: "btn btn-secondary" %>

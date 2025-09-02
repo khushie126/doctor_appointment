@@ -40,7 +40,7 @@ class Api::V1::PatientsController < ApplicationController
       end
 
       def patient_params
-        params.require(:patient).permit(:phone_number, :image, :medical_unit_id)
+        params.permit(:phone_number, :image, :medical_unit_id)
       end
     end
 
