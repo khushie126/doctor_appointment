@@ -1,7 +1,6 @@
 class Api::V1::DoctorsController < ApplicationController
-
       before_action :set_doctor, only: [:show, :update, :destroy]
-
+     
       def index
         @doctors = Doctor.all.includes(:specializations, :medical_unit)
         render json: @doctors.to_json(include: [:specializations, :medical_unit])
@@ -40,7 +39,7 @@ class Api::V1::DoctorsController < ApplicationController
       end
 
       def doctor_params
-        params.require(:doctor).permit(:phone_number, :image, :medical_unit_id, specialization_ids: [])
+        params.permit(:phone_number, :image, :medical_unit_id, specialization_ids: [])
       end
     end
 

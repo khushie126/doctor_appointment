@@ -63,3 +63,6 @@ group :test do
 end
 gem "devise"
 gem "faker"
+gem 'rack-cors'
+gem 'devise-jwt'
+gem 'jsonapi-serializer'
